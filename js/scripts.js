@@ -35,7 +35,12 @@ $(document).ready(function()
     event.preventDefault();
     var size = $("input[name = 'pSize']:checked").val();
     var toppings = [];
-    toppings = $("input[name = 'toppings']:checked").val();
-    console.log(size , toppings[1]);
+    $("input[name = 'toppings']:checked").each(function()
+    {
+      toppings.push($(this).val());
+    });
+    var newPizza = new Pizza (size,toppings);
+    console.log(newPizza);
+    console.log(newPizza.cost());
   });
 });
