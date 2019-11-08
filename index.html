@@ -14,7 +14,7 @@
       <div class="jumbotron">
         <h1>Welcome to Jakes Pizza Parlor!</h1>
       </div>
-      <form id="pizzaInput" action="index.html" method="post">
+      <form id="pizzaForm" action="index.html" method="post">
         <h2>Size:</h2>
 
         <input type="radio" name="pSize" value="small" checked>Small<br>
@@ -24,13 +24,14 @@
 
         <h2>Toppings:</h2>
         <label for="cheese">Cheese</label>
-        <input type="checkbox" id="cheese"><br>
+        <input type="checkbox" name="toppings" value="cheese"><br>
         <label for="pep">Pepperoni</label>
-        <input type="checkbox" id="pep"> <br>
+        <input type="checkbox" name="toppings" value="pep"> <br>
         <label for="pineapple">Pineapple</label>
-        <input type="checkbox" id="pineapple"><br>
+        <input type="checkbox" name="toppings" value="pineapple"><br>
         <label for="sausage">Sausage</label>
-        <input type="checkbox" id="sausage"><br>
+        <input type="checkbox" name="toppings" value="sausage"><br>
+        <button type="submit" name="button" class="btn btn-info">Create!</button>
       </form>
     </div>
   </body>
