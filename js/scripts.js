@@ -14,7 +14,18 @@ Pizza.prototype.cost = function()
     this.price = 10;
   else
     this.price = 12;
-  return this.price;
+  for(var i=0;i<this.toppings.length;i++)
+  {
+    if(this.toppings[i]=="cheese"){
+      this.price += 2;
+    }
+    else if(this.toppings[i]=="pepperoni"){
+      this.price += 3;
+  }
+  else if(this.toppings[i]=="sausage"){
+    this.price += 2;
+  }
 }
-
-var pizza1 = new Pizza (1,2);
+return this.price;
+}
+var pizza1 = new Pizza (1,["cheese", "pepperoni"]);
