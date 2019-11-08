@@ -18,15 +18,22 @@ Pizza.prototype.cost = function()
     this.price = 12;
   for(var i=0;i<=this.toppings.length;i++)
   {
-    console.log(this.toppings);
     if(this.toppings=="cheese")
       this.price += 2;
     else if(this.toppings[i]=="pepperoni")
       this.price += 3;
     else if(this.toppings[i]=="sausage")
       this.price += 2;
-    else if (this.toppings[i]=="sausage")
+    else if (this.toppings[i]=="pineapple")
       this.price += 2.50;
+    else if (this.toppings[i]=="chicken")
+      this.price += 1.50;
+    else if (this.toppings[i]=="mushrooms")
+      this.price += 0.50;
+    else if (this.toppings[i]=="olives")
+      this.price += .40;
+    else if (this.toppings[i]=="jalapeños")
+      this.price += .50;
   }
   return this.price;
 }
@@ -47,7 +54,5 @@ $(document).ready(function()
     $(".sizeConf").text(size);
     $(".toppingCount").text(toppings.length);
     $(".totalCost").text(newPizza.cost());
-    console.log(newPizza);
-    console.log(newPizza.cost());
   });
 });
