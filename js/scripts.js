@@ -1,9 +1,11 @@
-function Pizza(size,toppings)
+
+function Pizza(size,toppings = [])
 {
   this.size = size,
   this.toppings = toppings,
-  this.price = 0;
+  this.price = 0
 }
+
 Pizza.prototype.cost = function()
 {
   if (this.size=="small")
@@ -14,9 +16,10 @@ Pizza.prototype.cost = function()
     this.price = 10;
   else
     this.price = 12;
-  for(var i=0;i<this.toppings.length;i++)
+  for(var i=0;i<=this.toppings.length;i++)
   {
-    if(this.toppings[i]=="cheese")
+    console.log(this.toppings);
+    if(this.toppings=="cheese")
       this.price += 2;
     else if(this.toppings[i]=="pepperoni")
       this.price += 3;
@@ -27,7 +30,8 @@ Pizza.prototype.cost = function()
   }
   return this.price;
 }
-var pizza1 = new Pizza (1,["cheese", "pepperoni"]);
+
+
 $(document).ready(function()
 {
   $("form#pizzaForm").submit(function(event)
@@ -40,6 +44,9 @@ $(document).ready(function()
       toppings.push($(this).val());
     });
     var newPizza = new Pizza (size,toppings);
+    $(".sizeConf").text(size);
+    $(".toppingCount").text(toppings.length);
+    $(".totalCost").text(newPizza.cost());
     console.log(newPizza);
     console.log(newPizza.cost());
   });
