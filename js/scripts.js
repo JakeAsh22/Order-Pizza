@@ -1,4 +1,4 @@
-
+//back-end for creating a pizza
 function Pizza(size,toppings = [])
 {
   this.size = size,
@@ -38,7 +38,7 @@ Pizza.prototype.cost = function()
   return this.price;
 }
 
-
+//user interface for the website
 $(document).ready(function()
 {
   $("form#pizzaForm").submit(function(event)
@@ -51,6 +51,7 @@ $(document).ready(function()
       toppings.push($(this).val());
     });
     var newPizza = new Pizza (size,toppings);
+    $(".hidden").show();
     $(".sizeConf").text(size);
     $(".toppingCount").text(toppings.length);
     $(".totalCost").text(newPizza.cost());

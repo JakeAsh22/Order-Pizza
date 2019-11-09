@@ -1,0 +1,12 @@
+.hidden
+{
+  display: none;
+}
+body
+{
+  background-color: #fc9586;
+}
+.jumbotron
+{
+  text-align: center;
+}
